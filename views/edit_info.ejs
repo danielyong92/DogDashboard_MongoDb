@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Dog Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+         body{
+            margin-top: 10%;
+        }
+        #content{
+            border-radius: 20px;
+            border: 3px solid black;
+            padding: 20px;
+            width: 700px;
+            /* text-align: center; */
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <form action="/edit_dog/<%= thisdog._id %>" method="POST">
+            <% JSON.stringify(messages) %>
+                <% if(messages.registration) { %>
+                <% for (var x of messages.registration) { %>
+                <p><%= x %></p>
+                <% } %>
+                <% } %>
+            <h1>Edit Dog Info</h1>
+            <h4>Pic URL: <input type="text" name="pic" value="<%= thisdog.pic %>" class="form-control"></h4>
+            <h4>Name: <input type="text" name="name" value="<%= thisdog.name %>"class="form-control"></h4>
+            <h4>Age: <input type="number" name="age" value="<%= thisdog.age %>"class="form-control"></h4>
+            <h4>Activities: <input type="text" value="<%= thisdog.activities %>"name="activities" class="form-control"></h4>
+            <h4>Favorite Food: <input type="text" value="<%= thisdog.fav_food %>"name="fav_food" class="form-control"></h4>
+            <input type="submit" value="Update" class="btn btn-success">
+        </form>
+    </div>
+</body>
+
+</html>

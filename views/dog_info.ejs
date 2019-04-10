@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 5%;
+        }
+        img {
+            width: 430px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        #content{
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 15px;
+            margin:auto;
+            width:700px;
+            text-align: center;
+            box-shadow: 10px 10px 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <h1>Dog Info </h1>
+        <img src="<%= thisdog.pic %>">
+        <h4>Name: <%= thisdog.name %></h4>
+        <h4>Age: <%= thisdog.age %></h4>
+        <h4>Activities: <%= thisdog.activities %></h4>
+        <h4>Favorite Food: <%= thisdog.fav_food %></h4>
+
+        <a href="/dog/edit/<%= thisdog._id %>"><button class="btn btn-warning">Edit</button></a>
+        <a href="/dog/destroy/<%= thisdog._id %>"><button class="btn btn-danger">Delete</button></a>
+        <a href="/"><button button class="btn btn-primary">Home</button></a>
+
+    </div>
+</body>
+
+</html>
